@@ -148,7 +148,7 @@ function draw() {
     mat4.rotateY(modelview,modelview,rotateY);
 
    
-    drawWM();
+    drawWindmill();
 
    
   
@@ -159,7 +159,7 @@ function draw() {
     
 } // end draw();
 
-function drawWM(){
+function drawWindmill(){
     pushMatrix();
     currentColor = [0.905, 0.521, 0.074];
     mat4.translate(modelview, modelview, [0, 0, -0.3])
@@ -173,12 +173,12 @@ function drawWM(){
     mat4.translate(modelview, modelview, [-2.9, 2, 0]);
     mat4.translate(modelview, modelview, [2.9, 2, 0])
     mat4.translate(modelview, modelview, [2.9, -2, 0])
-    drawWindmill();
+    drawCones();
     popMatrix();
     drawBase();
  }
 
-function drawWind(){
+function drawCone(){
     pushMatrix();
     mat4.rotateY(modelview,modelview, Math.PI * 0.5);
     mat4.scale(modelview,modelview,[1, 1, 4]);
@@ -193,26 +193,26 @@ function drawWind(){
     popMatrix();
  }
 
- function drawWindmill(){
+ function drawCones(){
     pushMatrix()
     mat4.translate(modelview, modelview, [-5.3, 0.3, 0])
     mat4.rotateZ(modelview,modelview, Math.PI * 0.20);
     mat4.rotateY(modelview,modelview, Math.PI);
-    drawWind();
+    drawCone();
     popMatrix();
 
     pushMatrix()
     mat4.translate(modelview, modelview, [-0.45, 0.25, 0])
     mat4.rotateZ(modelview,modelview, 0.80 * Math.PI);
     mat4.rotateY(modelview,modelview, Math.PI);
-    drawWind();
+    drawCone();
     popMatrix();
 
     pushMatrix()
     mat4.translate(modelview, modelview, [-2.9, 5, 0])
     mat4.rotateZ(modelview,modelview, Math.PI * 1.5);
     mat4.rotateY(modelview,modelview, Math.PI);
-    drawWind();
+    drawCone();
     popMatrix();
  }
 
